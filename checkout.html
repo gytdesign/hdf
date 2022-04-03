@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | HOT DEAL Furniture</title>
+    
+    <!-- Links to local css and js files -->
+    <link href="style.css" rel="stylesheet">
+    <script src="myscript.js"></script>
+    
+    <!-- Link to Font Awesome kit icons -->
+    <script src="https://kit.fontawesome.com/d1cfde979f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <!-- Fixed Top Navigation -->
+        <nav id="topnav">
+            
+            <!-- Burger Menu -->
+            <div id="burger" onclick="toggleSidenav()">
+                <i class="fas fa-bars fa-fw"></i>
+            </div>
+
+            <!-- Logo -->
+            <a href="index.html"><img id="logo" src="images/logo.PNG" alt="logo"></a>
+            
+            <!-- Icons in Top Navigation -->
+            <div class="icons">    
+
+                <!-- Mini search bar in topnav -->
+                <span class="search-container wide-topnav-item">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fas fa-search fa-fw"></i></button>
+                </span>
+
+                <!-- Search icon that appears on smaller devices to toggle the full search bar on/off -->             
+                <button id="search-icon" onClick="showHide('full-search-bar')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- code for full-search-bar would appear here -->
+                
+                <!-- Help -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="far fa-question-circle fa-fw"></i> Help
+                </a>
+                
+                <!-- Contact -->
+                <a class="wide-topnav-item" href="contact.html">
+                    <i class="fas fa-phone-alt fa-fw"></i> Contact
+                </a>
+                
+                <!-- Account -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                
+                <!-- Wishlist -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-heart fa-fw"></i>
+                </a>
+
+                <!-- Cart (does not have "wide-topnav-item" class because the icon is shown regardless of topnav width) -->
+                <a id="cart" href="cart.html">
+                    <i class="fas fa-shopping-cart fa-fw"></i>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Side Navigation includes both topnav and catnav links -->
+        <ul id="sideNav">
+            <li><a href="#">BEDS</a></li>
+            <li><a href="#">MATTRESSES</a></li>
+            <li><a href="wardrobes.html">WARDROBE & STORAGE</a></li>
+            <li><a href="sofas.html">SOFAS</a></li>
+            <li><a href="#">TV STANDS & UNITS</a></li>
+            <li><a href="#">TABLES & CHAIRS</a></li>
+            <li><a href="#">HOME APPLIANCES</a></li>
+            <li><a href="#">OTHERS</a></li>
+            <li><a href="#">PACKAGES</a></li>
+            <li><div id="horizontal-line"></div></li>
+            <li>
+                <a href="#">MY ACCOUNT <i class="fas fa-user fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">WISHLIST <i class="fas fa-heart fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">HELP <i class="far fa-question-circle fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="contact.html">CONTACT <i class="fas fa-phone-alt fa-fw"></i></a>
+            </li>
+        </ul>
+
+        <!-- Category Navigation bar -->
+        <nav>
+            <ul id="catnav">
+                <li class="dropdown"><a class="catnav-link" href="#">BEDS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Single</a></li>
+                        <li><a href="#">King Single</a></li>
+                        <li><a href="#">Double</a></li>
+                        <li><a href="#">Queen</a></li>
+                        <li><a href="#">King</a></li>
+                        <li><a href="#">Bunk Single</a></li>
+                        <li><a href="#">Bunk King Single</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="#">MATTRESSES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Soft Mattress</a></li>
+                        <li><a href="#">Firm Mattress</a></li>
+                        <li><a href="#">Babe Mattress</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="wardrobes.html">WARDROBE & STORAGE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="wardrobes.html">Wardrobe</a></li>
+                        <li><a href="#">Chest</a></li>
+                    </ul>
+                </li>
+                <li><a class="catnav-link" href="sofas.html">SOFAS</a></li>
+                <li><a class="catnav-link" href="#">TV STANDS & UNITS</a></li>
+                <li><a class="catnav-link" href="#">TABLES & CHAIRS</a></li>
+                <li><a class="catnav-link" href="#">HOME APPLIANCES</a></li>
+                <li><a class="catnav-link" href="#">OTHERS</a></li>
+                <li class="dropdown"><a class="catnav-link" href="#">PACKAGES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Living Room</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <img src="images/bedroom.jpg" alt="furniture">
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li>Checkout</li>
+        </ul>
+
+        <!-- Main Checkout Info -->
+        <section class="container">
+
+            <!-- Container with 2 columns: checkout and order summary -->
+            <div class="flex-container">
+
+                <!-- Checkout --> 
+                <div id="checkout">
+                    
+                    <!-- Container with 2 columns: page name and progress bar-->
+                    <div class="flex-container">
+                        <div>
+                            <h2>CHECKOUT</h2>
+                        </div>
+                        <!-- Progress bar -->
+                        <div id="progress-bar">
+                            <div class="line"></div>
+                            <div class="items">
+                                <div class="active">
+                                    <div class="circle"></div>
+                                    <h3>ADDRESS</h3>
+                                </div>
+                                <div>
+                                    <div class="circle"></div>
+                                    <h3>PAYMENT</h3>
+                                </div>
+                                <div>
+                                    <div class="circle"></div>
+                                    <h3>REVIEW</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Checkout form -->
+                    <div id="checkout-form">
+                        <form>
+
+                            <!-- Personal details section-->
+                            <h3>PERSONAL DETAILS</h3>
+                            <div class="double-col">
+                                <!-- First name -->
+                                <div>
+                                    <span class="compulsory">* </span><label for="fname">FIRST NAME</label>
+                                    <div class="input-container">
+                                        <input type="text" id="fname">
+                                    </div>
+                                </div>
+                                <!-- Last name -->
+                                <div>
+                                    <span class="compulsory">* </span><label for="lname">LAST NAME</label>
+                                    <div class="input-container">
+                                        <input type="text" id="lname">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Email address -->
+                            <div>
+                                <span class="compulsory">* </span><label for="email">EMAIL ADDRESS</label>
+                                <div class="input-container">
+                                    <input type="email" id="email">
+                                </div>
+                            </div>
+                            
+                            <!-- Shipping Address section -->
+                            <h3>SHIPPING ADDRESS</h3>
+                            <!-- Address line 1 -->
+                            <span class="compulsory">* </span><label for="add-line-1">ADDRESS LINE 1</label>
+                            <div class="input-container">
+                                <input type="text" id="add-line-1" placeholder="e.g. 123 Main Street">
+                            </div>
+                            <!-- Address line 2 -->
+                            <label for="add-line-2">ADDRESS LINE 2</label>
+                            <div class="input-container">
+                                <input type="text" id="add-line-2">
+                            </div>
+                            <div class="double-col">
+                                <!-- Postcode -->
+                                <div>
+                                    <span class="compulsory">* </span><label for="postcode">POSTCODE</label>
+                                    <div class="input-container">
+                                        <input type="text" id="postcode" placeholder="e.g. 3000">
+                                    </div>
+                                </div>
+                                <!-- Suburb -->
+                                <div>
+                                    <span class="compulsory">* </span><label for="suburb">SUBURB</label>
+                                    <div class="input-container">
+                                        <input type="text" id="suburb" placeholder="e.g. Melbourne">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="double-col">
+                                <!-- Country -->
+                                <div>
+                                    <span class="compulsory">* </span><label for="country">Country</label>
+                                    <div>
+                                        <select id="country">
+                                            <option>AUSTRALIA</option>
+                                            <option>NEW ZEALAND</option>
+                                            <option>CANADA</option>
+                                            <option>USA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- State -->
+                                <div>
+                                    <span class="compulsory">* </span><label for="state">STATE</label>
+                                    <div>
+                                        <select id="state">
+                                            <option>Please Select</option>
+                                            <option>ACT</option>
+                                            <option>NSW</option>
+                                            <option>NT</option>
+                                            <option>QLD</option>
+                                            <option>SA</option>
+                                            <option>TAS</option>
+                                            <option>VIC</option>
+                                            <option>WA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile number -->
+                            <div>
+                                <span class="compulsory">* </span><label for="tel">MOBILE NUMBER</label>
+                                <div class="input-container">
+                                    <input type="text" id="tel" placeholder="e.g. 0400123456">
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                    <!-- Horizontal line break -->
+                    <div id="horizontal-line"></div>
+
+                    <!-- Page nav buttons -->
+                    <div class="double-col">
+                        <div>
+                            <form action="cart.html" class="nav-button" id="back-to-cart">
+                                <button type="submit"><i class="fas fa-chevron-left fa-fw"></i> BACK TO CART</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="#" class="nav-button" id="continue">
+                                <button type="submit">CONTINUE</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Order summary -->
+                <div>
+                    <h2>ORDER SUMMARY</h2>
+            
+                    <div class="order-summary">
+
+                        <div class="content">
+                            <h3>SUBTOTAL</h3>
+                            <h3 class="price">$899.97</h3>
+                        </div>
+                        <div style="padding: 0 1.5rem;">
+                            <h3>ESTIMATED DELIVERY</h3>
+                            <span class="input-container">
+                                <input type="text" placeholder="e.g. 3000" style="width: 150px; margin-top: 1rem;">
+                                <button type="submit" onClick="toggleTransparency('estDeliveryFee')">CHECK</button>
+                            </span>
+                        </div>
+                        <div class="content" id="estDeliveryFee">
+                            <h3 style="font-weight: normal;">ESTIMATED DELIVERY FEE</h3>
+                            <h3 class="price">$30</h3>
+                        </div>
+                        <div id="horizontal-line" style="margin: 0 1.5rem;"></div>
+                        <div class="content">
+                            <div>
+                                <h3>TOTAL</h3>
+                                <p style="color: #BEB9B5;">incl. GST</p>
+                            </div>
+                            <h3 class="price">$929.97</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <section id="footer-container">
+
+            <div>
+                <ul>
+                    <li><h2>Contact Us!</h2></li>
+                    <li><i class="fas fa-phone-alt fa-fw"></i> (02) 9635 8200 / 0423669515</li>
+                    <li><i class="fas fa-envelope fa-fw"></i> hotdealfurniture@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Shop 1, 41 Marion St</li>
+                    <!-- the following icons with 0 opacity allow lines of text to align perfectly -->
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Parramatta NSW 2150</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Mon - Sun (10am - 6pm)</li>
+                    <li>HELP <i class="far fa-question-circle fa-fw"></i></li>
+                    <li>PRIVACY POLICY</li>
+                    <li>TERMS & CONDITIONS</li>
+                </ul>
+            </div>
+            
+            <div id="keep-in-touch">
+                <ul>
+                    <li><h2>Keep in touch!</h2></li>
+                    <li style="margin: 0.5rem 0 1rem 0;">
+
+                        <!-- Email subscription container (with extra width for long email addresses) -->
+                        <span class="input-container" style="border: none;">
+                            <input type="email" placeholder="Email Address" style="width: 180px;">
+                            <button type="submit">SUBSCRIBE</button>
+                        </span>
+
+                    </li>
+                    
+                    <!-- Social media icons -->
+                    <li style="font-size: 1rem;">
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-fw fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-weibo fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-qq fa-stack-1x"></i>
+                        </span>
+                    </li>
+
+                    <!-- Payment method icons -->
+                    <li style="font-size: 2rem;">
+                        <i class="fab fa-cc-amex fa-fw"></i>
+                        <i class="fab fa-cc-mastercard fa-fw"></i>
+                        <i class="fab fa-cc-visa fa-fw"></i>
+                    </li>
+
+                    <!-- Copyright message -->
+                    <li><i class="far fa-copyright fa-fw"></i> Copyright 2020 HOT DEAL Furniture. Designed by Yu Tong Gan.</li>
+                </ul>
+            </div>    
+    
+        </section>
+    </footer>
+
+</body>
+</html>

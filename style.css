@@ -1,0 +1,961 @@
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap');
+
+
+/*** designing for desktop first ***/
+
+
+/* start of general style */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+body { 
+    line-height: 1.6;
+    background-color: white;
+    font-size: 0.8rem;
+    color: #272932;
+}
+
+h1 { /* centered main headings */
+    font-family: 'Baumans', 'franklin gothic medium', sans-serif;
+    font-size: 1.2rem;
+    color: #BEB9B5;
+    text-align: center;
+}
+
+h2 { /* left-aligned main headings */
+    font-family: 'Baumans', 'franklin gothic medium', sans-serif;
+    font-size: 1.2rem;
+    color: #BEB9B5;
+}
+
+h3 { /* secondary headings */
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+a {
+    text-decoration: none;
+    color: #272932; 
+}
+
+i { /* make all icons appear clickable */
+    cursor: pointer;
+}
+
+button { /* remove default style of buttons */
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+input[type=text], input[type=number], input[type=email] { /* remove default style of input containers */
+    border: none;
+    background-color: transparent;
+    padding: 0.2rem 0 0.2rem 0.5rem;
+    outline: none;
+    width: 100%;
+}
+
+input[type=text]:focus, input[type=number]:focus, input[type=email]:focus { /* blue highlight box appears when input containers are clicked on */
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 0.2rem 0 0.2rem 0.5rem;
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+input[type=checkbox] { /* remove default style of checkboxes */
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+/* end of general style */
+
+
+
+
+
+/* start of header and navigation style */
+#topnav { /* fixed top navigation bar */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.1);
+    padding: 0 3rem;
+    height: 5rem;
+    width: 100%;
+}
+
+.icons .wide-topnav-item, #cart, #burger { /* topnav and cart icons, and burger menu show on larger screens by default */
+    text-decoration: none;
+    padding: 0.2rem 0.4rem;
+    color: #272932;
+    font-size: 1rem;
+}
+
+#search-icon { /* only appears on smaller screens; for accessing the full search bar */
+    display: none; 
+}
+
+.icons .wide-topnav-item:hover, .icons .topnav-item button:hover,#cart:hover, #search-icon:hover, #burger:hover {
+    /* all icons in topnav change color when hovered */
+    color: #BEB9B5;
+}
+
+.search-container { /* small search bar in topnav */
+    background-color: #EEEAE8;
+    border-radius: 1rem;
+    margin-right: 0.8rem;
+}
+
+.search-container input { 
+    width: inherit;
+}
+ 
+#burger { /* burger menu hidden on larger screens by default */
+    display: none;
+}
+
+#logo { /* HOT DEAL Furniture logo in topnav */
+    float: left;
+    max-width: 280px;
+    padding-left: 0.5rem;
+}
+
+#sideNav { /* side navigation, accessed by clicking on the burger menu */
+    position: fixed;
+    z-index: 1;
+    top: 4rem;
+    left: 0;
+    list-style: none;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.2);
+    padding: 1rem 0;
+    height: 400px;
+    width: 0%;
+    overflow-x: hidden;
+    transition: 0.5s;
+    white-space: nowrap;
+}
+
+#sideNav li {
+    transition: background-color 0.3s;
+    line-height: 2;
+    padding: 0 2rem;
+}
+
+#sideNav li:hover {
+    background-color: #EEEAE8;
+}
+
+#horizontal-line { /* the line in the sidenav and order summary */
+    margin: 1rem 0rem;
+    height: 0.05rem;
+    background-color: #BEB9B5;
+}
+
+#catnav { /* horizontal navigation bar of product categories */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    background-color: #BEB9B5;
+    margin-top: 7rem; /* top margin is the sum of the standard 2rem and the topnav height of 5rem */
+    padding: 0 8%;
+    height: 3rem;
+    width: 100%;
+}
+
+.catnav-link {
+    display: inline-block;
+    line-height: 1.2;
+    text-decoration: none;
+    color: white;
+    padding: 0.4rem;
+    transition: color 0.3s;
+}
+
+.catnav-link:hover {
+    color: #eeeae8;
+}
+
+.dropdown { /* for product categories in the catnav that have subcategories */
+    float: none;
+}
+
+.dropdown-content { /* product subcategories in catnav */
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    list-style: none;
+    text-align: left;
+    font-size: 0.8em;
+}    
+
+.dropdown-content li {
+    padding: 1rem 2rem;
+    transition: background-color 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background-color: #EEEAE8;
+}
+
+@media only screen  and (max-width: 900px) {
+    /* respond when screen is between 740px and 900px wide */
+    .search-container {
+        display: none;
+    }
+    #search-icon { /* search icon replaces the search bar */
+        display: inline;
+        margin-right: 1rem;
+    }
+    #catnav {
+        padding: 0 3%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    /* respond when screen is up to 740px wide */
+    #topnav {
+        height: 4rem;
+        padding: 0 5%;
+    }
+    .icons .wide-topnav-item{
+        display: none;
+    }
+    #burger { /* burger menu appears on the left of the logo */
+        display: block;
+        float: left;
+    }
+    #logo {
+        width: 200px;
+    }
+    #catnav {
+        display: none;
+    }
+}
+/* end of header and navigation style */
+
+
+
+
+
+/* start of hero image style */
+.hero-image img {
+    margin-top: 2rem;
+    max-height: 300px;
+    width: 100%;
+    align-content: flex-end;
+    object-fit: cover;
+}
+
+.hero-image::after {
+    /* making the hero image fade to white by placing a translucent white gradient on top  */
+    position: relative;
+    display: block;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 120%);
+    margin-top: -160px;
+    height: 160px;
+    width: 100%;
+    content: '';
+}
+/* end of hero image style */
+
+
+
+
+
+/* start of main style */
+.breadcrumb { /* breadcrumbs for page navigation */
+    padding: 1rem 5% 0 5%;
+    list-style: none;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li+li:before { /* each breadcrumbs list has a '>' symbol between them */
+    padding: 0.5rem;
+    content: "\003E";
+}
+
+.breadcrumb a {
+    color: #BEB9B5;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.shaded-background { /* for divs/sections */
+    background-color: #EEEAE8;
+}
+
+.darker-background { /* for divs/sections */
+    background-color: #BEB9B5;
+}
+
+.container { /* wraps sections in the main */
+    margin-top: 1rem;
+    padding: 1rem 5%;
+}
+
+.grid-container { /* wraps sections in the main in the form of grids */
+    display: grid;
+    justify-items: center;
+    margin-top: 1rem;
+    padding: 1rem 5%;
+}
+
+.flex-grid { /* mainly for grid of product lists */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.flex-grid .card { /* a single product listing that includes the image and description */
+    width: 25%; /* fit 4 cards per row on large screens */
+    padding: 2rem;
+}
+
+.flex-grid .card a { /* product listing description */
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.flex-grid .card a:hover {
+    color: #BEB9B5;
+}
+
+.flex-grid .card img { /* product listing image */
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s;
+}
+
+.flex-grid .card img:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.flex-container { /* mainly for 2-column containers that become 1 column on smaller screens */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#about-section, #contact-section, .product-info {
+    padding: 1rem 10%;
+}
+
+#about-section .image { /* about section image has rounded corners */
+    border-radius: 1rem;
+    width: 100%;
+}
+
+#about-description { /* 'about us' section on homepage */
+    text-align: justify;
+    margin-right: 3rem;
+    min-width: 300px;
+}
+
+#contact-description { /* info on contact page */
+    min-width: 330px;
+}
+
+.input-container, .nav-button {
+    background-color: white;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    border: 1px solid #BEB9B5;
+    border-radius: 1rem;
+}
+
+.input-container button {
+    font-family: 'Baumans', 'franklin gothic medium', sans-serif;
+    background-color: #EEEAE8;
+    padding: 0.5rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+#google-map { /* on contact page */
+    width: 100%;
+    border: 0;
+    box-shadow: 0 0.25rem 0.5rem 0.25rem rgba(0,0,0,0.2);
+}
+
+#filter-menu { /* hidden on larger screens by default; on product listings page */
+    display: none;
+    font-weight: bold;
+    font-size: inherit;
+}
+
+#filterSidebar { /* sort and filter sidebar, accessed by the filter-menu */
+    font-weight: bold;
+    width: 280px;
+    height: 500px;
+    background-color: white;
+    margin: 1rem 1rem 0 0;
+    border: 2px solid #EEEAE8;
+    border-radius: 1rem;
+}
+
+#filterSidebar .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
+    margin: 0.4rem 0;
+}
+
+#filterSidebar button {
+    font-size: 0.6rem;
+}
+
+#filterSidebar .content {
+    padding: 0 1rem;
+}
+
+#sort-menu, #country, #state { /* sort selection menu in the filterSidebar; and country and state selection menus in checkout */
+    border: 1px solid #BEB9B5;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0.2rem 0 0.4rem 0;
+    font-size: 0.8rem;
+    width: 150px;
+}
+
+.check-container { /* checkboxes in the filterSidebar */
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 0.3rem 0 0.3rem 1.8rem;
+}
+
+.check-container .checkmark {
+    position: absolute;
+    top: 0.3rem;
+    left: 0;
+    height: 1.2rem;
+    width: 1.2rem;
+    border: 1px solid #BEB9B5;
+    border-radius: 0.2rem;
+    transition: border 0.1s;
+}
+
+.check-container:hover input ~ .checkmark {
+    border: 1px solid #272932;
+}
+
+.check-container input:checked ~ .checkmark {
+    background-color: #BEB9B5;
+    border: none;
+}
+
+.check-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.check-container .checkmark:after { /* custom checkmark */
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0.4rem;
+    top: 0.1rem;
+    width: 0.3rem;
+    height: 0.6rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.slide-container {
+    margin: 1rem 0;
+}
+
+.color-option {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem 0 1rem 1.8rem;
+}
+
+.color-option .checkmark {
+    position: absolute;
+    top: 0.3rem;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    transition: border 0.1s;
+}
+
+.color-option:hover input ~ .checkmark {
+    border: 2px solid #BEB9B5;
+}
+
+.color-option input:checked ~ .checkmark {
+    border: 2px;
+}
+
+.color-option input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.color-option .checkmark:after { /* custom color picker */
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0.5rem;
+    top: 0.25rem;
+    width: 0.3rem;
+    height: 0.6rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.product-listings { /* product listings */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 4rem;
+}
+
+.product-listings .card { /* a single product listing that includes the image and description */
+    width: 200px;
+    height: 200px;
+    margin: 1rem 0rem 0rem 2%;
+    align-items: center;
+    transition: opacity 0.3s;
+}
+
+.product-listings .card:hover {
+    opacity: 70%;
+}
+
+.product-listings .card img { /* product listing image */
+    width: 100%;
+}
+
+.product-listings .card a { /* product listing description */
+    font-weight: bold;
+}
+
+.product-listings .cropped {
+    height: 160px;
+    object-fit: cover;
+}
+
+.product-listings img {
+    margin-top: -20px;
+}
+
+.product-listings .price, .product-page .price {
+    color: #EF6461;
+    margin-right: 0.2rem;
+}
+
+.original-price {
+    color: #BEB9B5;
+}
+
+.price {
+    color: #71C6B8;
+}
+
+.pagination .active { /* page numbers below product listings */
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #BEB9B5;
+}
+
+.pagination a {
+    padding: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.1s;
+}
+  
+.pagination a:hover {
+    background-color: #EEEAE8;
+}
+
+.product-outline { /* card on product page that contains main details of product */
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    align-items: center;
+    font-weight: bold;
+    width: 350px;
+    height: 410px;
+    background-color: white;
+    margin: 1rem 0 2rem 1rem;
+    border: 1.5px solid #BEB9B5;
+    border-radius: 1.2rem;
+}
+
+.product-outline .heading, .product-outline .content, .order-summary .heading {
+    padding: 1.5rem;
+}
+
+.product-outline .price {
+    font-size: 1rem;
+}
+
+.round-bottom {
+    border-radius: 0 0 1rem 1rem;
+}
+
+.product-info .product-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 600px;
+    margin-bottom: 1rem;
+}
+
+.product-info ul {
+    list-style: none;
+    line-height: 2.5;
+}
+
+.main-image { /* repositioning the main image in the gallery */
+    margin-top: -60px;
+    height: 320px;
+}
+
+.mini-gallery { /* gallery of extra images underneath the main image */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.mini-gallery img {
+    border: 1px solid #BEB9B5;
+    border-radius: 1rem;
+}
+
+.recently-viewed {
+    justify-items: normal;
+    padding-bottom: 3rem;
+    margin-top: 10rem;
+}
+
+.carousel-cell {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    margin: 0 1rem;
+}
+
+.carousel-cell .card a { /* product listing description */
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.carousel-cell .card a:hover {
+    color: #BEB9B5;
+}
+
+.carousel-cell .card img { /* product listing image */
+    width: 150px;
+    transition: opacity 0.3s;
+}
+
+.carousel-cell .card img:hover {
+    opacity: 70%;
+}
+
+.product-suggestions .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-summary { /* card that summarises the cart */
+    display: grid;
+    align-items: center;
+    font-weight: bold;
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    margin: 1rem 0;
+    border: 1.5px solid #BEB9B5;
+    border-radius: 1.2rem;
+}
+
+.order-summary .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+.order-summary .input-container button {
+    padding: 0.5rem 1.5rem;
+}
+
+#estDeliveryFee {
+    opacity: 0;
+}
+
+.cart-item { /* card containing item(s) in cart */
+    justify-content: space-between;
+    min-width: 520px;
+    background-color: white;
+    margin: 1rem 1rem 0 0;
+    padding: 2rem 0;
+    border: 1.5px solid #BEB9B5;
+    border-radius: 1.2rem;
+}
+
+.item-description, .item-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.item-description {
+    justify-content: left;
+    margin: -0.5rem 0 1rem 1rem;
+}
+
+.item-description img {
+    width: 100px;
+    margin: 0 1rem 0 0;
+}
+
+.nav-button {
+    min-width: 200px;
+    max-width: 300px;
+    border-width: 1.2px;
+    transition: opacity 0.3s;
+}
+
+.nav-button:hover {
+    opacity: 70%;
+}
+
+#progress-bar {
+    display: grid;
+    width: 300px;
+    color: #BEB9B5;
+}
+
+#progress-bar .line {
+    margin-top: 1rem;
+    height: 2px;
+    width: 83%;
+    margin-left: 1.5rem;
+    background-color: #272932;
+}
+
+#progress-bar .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#progress-bar .circle {
+    height: 0.8rem;
+    width: 0.8rem;
+    margin: -0.5rem 1.2rem 0 1.5rem;
+    border-radius: 50%;
+    border: 2px solid #272932;
+    background-color: white;
+}
+
+#progress-bar .active {
+    color: #272932;
+}
+
+#progress-bar .active .circle {
+    background-color: #272932;
+}
+
+#continue { /* the CONTINUE form on the checkout page */
+    background-color: #BEB9B5;
+}
+
+.double-col { /* to put two form inputs in one line */
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+}
+
+#checkout {
+    margin-bottom: 2rem;
+}
+
+#checkout-form h3 { /* form headings in checkout */
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+#checkout-form label { /* labels for each input in checkout */ 
+    font-weight: bold;
+    color: #BEB9B5;
+}
+
+#checkout-form .input-container, #country, #state { /* all form containers in checkout */
+    padding: 0.2rem 1rem 0.2rem 0.5rem;
+    min-width: 250px;
+}
+
+#checkout-form .compulsory { /* styling the * symbols for compulsory inputs */
+    color: #EF6461;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+    /* respond when screen is between 700px and 900px wide */
+    .flex-container {
+        flex-direction: column;
+        justify-content: normal;
+    }
+    #about-section, #contact-section {
+        padding: 0;
+    }
+    #about-section .image {
+        border-radius: 0;
+        height: 315px;
+        object-fit: cover;
+    }
+    #about-description, #contact-description {
+        margin: 0;
+        padding: 2rem;
+    }
+    #google-map {
+        margin: 1rem 10% 2rem 10%;
+        width: 80%;
+    }
+    #filter-menu {
+        display: block;
+    }
+    #filterSidebar {
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+    .product-info {
+        padding: 1rem 5%;
+    }
+    .cart-item {
+        margin-right: 0;
+        min-width: 300px;
+    }
+    #back-to-cart {
+        margin-bottom: 1rem;
+    }
+    #checkout-form .input-container, #country, #state {
+        padding: 0.1rem 1rem 0.1rem 0.2rem;
+        min-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    /* respond when screen is up to 700px wide */
+    .flex-grid .card {
+        width: 50%; /* fit 2 cards per row on small screens */
+    }
+    .product-listings .card { /* shrink product listing cards */
+        width: 150px;
+        height: 150px;
+        line-height: 1;
+    }
+    .product-listings .cropped { /* crop product listing images */
+        height: 120px;
+    }
+    .product-listings img {
+        margin-top: -15px;
+    }
+    .product-listings .card a {
+        font-size: 0.8em;
+    }
+}
+/* end of main style */
+
+
+
+
+
+/* start of footer style */
+footer { /* attached to the very end of the page */
+    position: relative;
+    bottom: 0; 
+    background-color:#BEB9B5;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+#footer-container { /* contains the 'contact us' and 'keep in touch' columns */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 1rem 8%;
+}
+
+#footer-container ul {
+    list-style: none;
+}
+
+#footer-container h2 {
+    color: #272932;
+}
+
+@media only screen and (max-width: 920px) {
+    #footer-container {
+        justify-content: justify;
+        padding: 1rem 5%;
+    }
+    #footer-container ul {
+        font-size: 0.9em;
+    }
+    #keep-in-touch {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 640px) { 
+    /* when screen is up to 640px wide */
+    #footer-container {
+        flex-direction: column;
+        padding: 1rem 2rem;
+    }
+    #keep-in-touch {
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+/* end of footer style */

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofas | HOT DEAL Furniture</title>
+    
+    <!-- Links to local css and js files -->
+    <link href="style.css" rel="stylesheet">
+    <script src="myscript.js"></script>
+    
+    <!-- Link to Font Awesome kit icons -->
+    <script src="https://kit.fontawesome.com/d1cfde979f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <!-- Fixed Top Navigation -->
+        <nav id="topnav">
+            
+            <!-- Burger Menu -->
+            <div id="burger" onclick="toggleSidenav()">
+                <i class="fas fa-bars fa-fw"></i>
+            </div>
+
+            <!-- Logo -->
+            <a href="index.html"><img id="logo" src="images/logo.PNG" alt="logo"></a>
+            
+            <!-- Icons in Top Navigation -->
+            <div class="icons">    
+
+                <!-- Mini search bar in topnav -->
+                <span class="search-container wide-topnav-item">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fas fa-search fa-fw"></i></button>
+                </span>
+
+                <!-- Search icon that appears on smaller devices to toggle the full search bar on/off -->             
+                <button id="search-icon" onClick="showHide('full-search-bar')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- code for full-search-bar would appear here -->
+                
+                <!-- Help -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="far fa-question-circle fa-fw"></i> Help
+                </a>
+                
+                <!-- Contact -->
+                <a class="wide-topnav-item" href="contact.html">
+                    <i class="fas fa-phone-alt fa-fw"></i> Contact
+                </a>
+                
+                <!-- Account -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                
+                <!-- Wishlist -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-heart fa-fw"></i>
+                </a>
+
+                <!-- Cart (does not have "wide-topnav-item" class because the icon is shown regardless of topnav width) -->
+                <a id="cart" href="cart.html">
+                    <i class="fas fa-shopping-cart fa-fw"></i>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Side Navigation includes both topnav and catnav links -->
+        <ul id="sideNav">
+            <li><a href="#">BEDS</a></li>
+            <li><a href="#">MATTRESSES</a></li>
+            <li><a href="wardrobes.html">WARDROBE & STORAGE</a></li>
+            <li><a href="sofas.html">SOFAS</a></li>
+            <li><a href="#">TV STANDS & UNITS</a></li>
+            <li><a href="#">TABLES & CHAIRS</a></li>
+            <li><a href="#">HOME APPLIANCES</a></li>
+            <li><a href="#">OTHERS</a></li>
+            <li><a href="#">PACKAGES</a></li>
+            <li><div id="horizontal-line"></div></li>
+            <li>
+                <a href="#">MY ACCOUNT <i class="fas fa-user fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">WISHLIST <i class="fas fa-heart fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">HELP <i class="far fa-question-circle fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="contact.html">CONTACT <i class="fas fa-phone-alt fa-fw"></i></a>
+            </li>
+        </ul>
+
+        <!-- Category Navigation bar -->
+        <nav>
+            <ul id="catnav">
+                <li class="dropdown"><a class="catnav-link" href="#">BEDS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Single</a></li>
+                        <li><a href="#">King Single</a></li>
+                        <li><a href="#">Double</a></li>
+                        <li><a href="#">Queen</a></li>
+                        <li><a href="#">King</a></li>
+                        <li><a href="#">Bunk Single</a></li>
+                        <li><a href="#">Bunk King Single</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="#">MATTRESSES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Soft Mattress</a></li>
+                        <li><a href="#">Firm Mattress</a></li>
+                        <li><a href="#">Babe Mattress</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="wardrobes.html">WARDROBE & STORAGE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="wardrobes.html">Wardrobe</a></li>
+                        <li><a href="#">Chest</a></li>
+                    </ul>
+                </li>
+                <li><a class="catnav-link" href="sofas.html">SOFAS</a></li>
+                <li><a class="catnav-link" href="#">TV STANDS & UNITS</a></li>
+                <li><a class="catnav-link" href="#">TABLES & CHAIRS</a></li>
+                <li><a class="catnav-link" href="#">HOME APPLIANCES</a></li>
+                <li><a class="catnav-link" href="#">OTHERS</a></li>
+                <li class="dropdown"><a class="catnav-link" href="#">PACKAGES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Living Room</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <img src="images/red-theme-room.jpg" alt="furniture">
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Sofas</li>
+        </ul>
+
+        <section class="grid-container">
+
+            <h1>SOFAS</h1>
+
+            <div class="flex-container">
+
+                <!-- Column containing sort and filter -->
+                <div> 
+                    
+                    <!-- Menu button that appears on smaller screens to toggle the filter sidebar on/off -->
+                    <button id="filter-menu" onClick="showHide('filterSidebar')">
+                    <i class="fas fa-filter fa-fw"></i> SHOW FILTERS
+                    </button>
+
+                    <!-- Sort and filter side bar-->
+                    <div id="filterSidebar">
+
+                        <div style="padding: 0.5rem 0 0 1rem;">
+                            <h3>SORT BY</h3>
+                        </div> 
+
+                        <div class="content">
+                            <select id="sort-menu">
+                                <option>DEFAULT</option>
+                                <option>Name A-Z</option>
+                                <option>Name Z-A</option>
+                                <option>Price low to high</option>
+                                <option>Price high to low</option>
+                                <option>Rating highest</option>
+                                <option>Rating lowest </option>
+                                <option>Model A-Z</option>
+                                <option>Model Z-A</option>
+                            </select>
+                            <label class="check-container" style="color: #EF6461;">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>ON SALE
+                            </label>
+                        </div>
+
+                        <div class="heading shaded-background">
+                            <h3>CATEGORY</h3><button>CLEAR ALL</button>
+                        </div>
+                        
+                        <div class="content">
+                            <label class="check-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>2-Seater
+                            </label>
+                            <label class="check-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>3-Seater
+                            </label>
+                            <label class="check-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>4-Seater
+                            </label>
+                            <label class="check-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>Modular Sofas
+                            </label>
+                            <label class="check-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>L-Shaped
+                            </label>
+                            <label class="check-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>Sofa Beds
+                            </label>
+                        </div>
+                        
+                        <div class="heading shaded-background">
+                            <h3>PRICE</h3>
+                            <button>RESET ALL</button>
+                        </div>
+
+                        <div class="content slide-container">
+                            <input type="range" min="1" max="100" value="50" style="width: 100%;">
+                        </div>
+
+                        <div class="heading shaded-background">
+                            <h3>COLOUR</h3>
+                            <button>CLEAR ALL</button>
+                        </div>
+
+                        <div class="content">
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: brown;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: saddlebrown;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: gray;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: black;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: lightgreen;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: khaki;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: navy;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: red;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: rgb(233, 233, 233);"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: cornflowerblue;"></span>
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox">
+                                <span class="checkmark" style="background-color: palevioletred;"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Column containing the product listings and pagination -->
+                <div class="product-listings">
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/3-seater-sofa.png" alt="modern 3-seater sofa"></div>
+                            Modern 3-Seater<br>
+                            <span class="price">$299.99</span><span class="original-price"><s>$329.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="abbotbury-2-seater.html">
+                            <div class="cropped"><img src="images/sofas/abbotbury-2-seater-sofa.png" alt="abbotbury 2-seater sofa"></div>
+                            Abbotbury 2-Seater<br>
+                            <span class="price">$499.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/red-contemporary-sofa.png" alt="contemporary sofa"></div>
+                            Contemporary Sofa<br>
+                            <span class="price">$339.99</span><span class="original-price"><s>$359.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="sofas.html">
+                            <div class="cropped"><img src="images/sofas/blue-cushion-sofa.png" alt="cushion sofa"></div>
+                            Cushion Sofa<br>
+                            <span class="price">$209.99</span><span class="original-price"><s>$229.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/blue-l-shaped-sofa.png" alt="grand l-shaped sofa"></div>
+                            Grand L-Shaped<br>
+                            <span class="price">$599.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/fabric-sofa.png" alt="light fabric sofa"></div>
+                            Light Fabric Sofa<br>
+                            <span class="price">$259.99</span><span class="original-price"><s>$299.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/grey-fabric-sofa.png" alt="curvy fabric sofa"></div>
+                            Curvy Fabric Sofa<br>
+                            <span class="price">$269.99</span><span class="original-price"><s>$299.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/grey-l-shaped-sofa.png" alt="modern l-shaped sofa"></div>
+                            Modern L-Shaped<br>
+                            <span class="price">$409.99</span><span class="original-price"><s>$439.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/yellow-leather-sofa.png" alt="leather sofa"></div>
+                            Leather Sofa<br>
+                            <span class="price">$659.99</span><span class="original-price"><s>$699.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/pearl-sectional-sofa.png" alt="libby l-shaped"></div>
+                            Libby L-Shaped<br>
+                            <span class="price">$599.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/princess-pink-sofa.png" alt="princess sofa"></div>
+                            Princess Sofa<br>
+                            <span class="price">$499.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/black-sofa-bed.png" alt="simple sofa bed"></div>
+                            Simple Sofa Bed<br>
+                            <span class="price">$299.99</span><span class="original-price"><s>$339.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/red-velvet-sofa.png" alt="velvet sofa"></div>
+                            Velvet Sofa<br>
+                            <span class="price">$259.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/rounded-yellow-sofa.png" alt="rounded sofa"></div>
+                            Rounded Sofa<br>
+                            <span class="price">$299.99</span><span class="original-price"><s>$339.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/sectional-3-seater-l.png" alt="sectional 3-seater sofa"></div>
+                            Sectional 3-seater<br>
+                            <span class="price">$399.99</span><span class="original-price"><s>$429.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/simple-pink-sofa.png" alt="simple sofa"></div>
+                            Simple sofa<br>
+                            <span class="price">$249.99</span><span class="original-price"><s>$279.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/sky-blue-couch.png" alt="sky couch"></div>
+                            Sky Couch<br>
+                            <span class="price">$349.99</span><span class="original-price"><s>$379.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/small-sectional-sofa.png" alt="sectional mini sofa"></div>
+                            Sectional Mini Sofa<br>
+                            <span class="price">$329.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/l-shaped-sofa.png" alt="gilbert l-shaped"></div>
+                            Gilbert L-Shaped<br>
+                            <span class="price">$599.99</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination for browsing through pages of products-->
+            <div class="pagination">
+                <span class="active">&#60;</span>
+                <span class="active">1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&#62;</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <section id="footer-container">
+
+            <div>
+                <ul>
+                    <li><h2>Contact Us!</h2></li>
+                    <li><i class="fas fa-phone-alt fa-fw"></i> (02) 9635 8200 / 0423669515</li>
+                    <li><i class="fas fa-envelope fa-fw"></i> hotdealfurniture@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Shop 1, 41 Marion St</li>
+                    <!-- the following icons with 0 opacity allow lines of text to align perfectly -->
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Parramatta NSW 2150</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Mon - Sun (10am - 6pm)</li>
+                    <li>HELP <i class="far fa-question-circle fa-fw"></i></li>
+                    <li>PRIVACY POLICY</li>
+                    <li>TERMS & CONDITIONS</li>
+                </ul>
+            </div>
+            
+            <div id="keep-in-touch">
+                <ul>
+                    <li><h2>Keep in touch!</h2></li>
+                    <li style="margin: 0.5rem 0 1rem 0;">
+
+                        <!-- Email subscription container (with extra width for long email addresses) -->
+                        <span class="input-container" style="border: none;">
+                            <input type="email" placeholder="Email Address" style="width: 180px;">
+                            <button type="submit">SUBSCRIBE</button>
+                        </span>
+
+                    </li>
+                    
+                    <!-- Social media icons -->
+                    <li style="font-size: 1rem;">
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-fw fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-weibo fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-qq fa-stack-1x"></i>
+                        </span>
+                    </li>
+
+                    <!-- Payment method icons -->
+                    <li style="font-size: 2rem;">
+                        <i class="fab fa-cc-amex fa-fw"></i>
+                        <i class="fab fa-cc-mastercard fa-fw"></i>
+                        <i class="fab fa-cc-visa fa-fw"></i>
+                    </li>
+
+                    <!-- Copyright message -->
+                    <li><i class="far fa-copyright fa-fw"></i> Copyright 2020 HOT DEAL Furniture. Designed by Yu Tong Gan.</li>
+                </ul>
+            </div>    
+    
+        </section>
+    </footer>
+
+</body>
+</html>

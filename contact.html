@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | HOT DEAL Furniture</title>
+    
+    <!-- Links to local css and js files -->
+    <link href="style.css" rel="stylesheet">
+    <script src="myscript.js"></script>
+    
+    <!-- Link to Font Awesome kit icons -->
+    <script src="https://kit.fontawesome.com/d1cfde979f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <!-- Fixed Top Navigation -->
+        <nav id="topnav">
+            
+            <!-- Burger Menu -->
+            <div id="burger" onclick="toggleSidenav()">
+                <i class="fas fa-bars fa-fw"></i>
+            </div>
+
+            <!-- Logo -->
+            <a href="index.html"><img id="logo" src="images/logo.PNG" alt="logo"></a>
+            
+            <!-- Icons in Top Navigation -->
+            <div class="icons">    
+
+                <!-- Mini search bar in topnav -->
+                <span class="search-container wide-topnav-item">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fas fa-search fa-fw"></i></button>
+                </span>
+
+                <!-- Search icon that appears on smaller devices to toggle the full search bar on/off -->             
+                <button id="search-icon" onClick="showHide('full-search-bar')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- code for full-search-bar would appear here -->
+                
+                <!-- Help -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="far fa-question-circle fa-fw"></i> Help
+                </a>
+                
+                <!-- Contact -->
+                <a class="wide-topnav-item" href="contact.html">
+                    <i class="fas fa-phone-alt fa-fw"></i> Contact
+                </a>
+                
+                <!-- Account -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                
+                <!-- Wishlist -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-heart fa-fw"></i>
+                </a>
+
+                <!-- Cart (does not have "wide-topnav-item" class because the icon is shown regardless of topnav width) -->
+                <a id="cart" href="cart.html">
+                    <i class="fas fa-shopping-cart fa-fw"></i>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Side Navigation includes both topnav and catnav links -->
+        <ul id="sideNav">
+            <li><a href="#">BEDS</a></li>
+            <li><a href="#">MATTRESSES</a></li>
+            <li><a href="wardrobes.html">WARDROBE & STORAGE</a></li>
+            <li><a href="sofas.html">SOFAS</a></li>
+            <li><a href="#">TV STANDS & UNITS</a></li>
+            <li><a href="#">TABLES & CHAIRS</a></li>
+            <li><a href="#">HOME APPLIANCES</a></li>
+            <li><a href="#">OTHERS</a></li>
+            <li><a href="#">PACKAGES</a></li>
+            <li><div id="horizontal-line"></div></li>
+            <li>
+                <a href="#">MY ACCOUNT <i class="fas fa-user fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">WISHLIST <i class="fas fa-heart fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">HELP <i class="far fa-question-circle fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="contact.html">CONTACT <i class="fas fa-phone-alt fa-fw"></i></a>
+            </li>
+        </ul>
+
+        <!-- Category Navigation bar -->
+        <nav>
+            <ul id="catnav">
+                <li class="dropdown"><a class="catnav-link" href="#">BEDS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Single</a></li>
+                        <li><a href="#">King Single</a></li>
+                        <li><a href="#">Double</a></li>
+                        <li><a href="#">Queen</a></li>
+                        <li><a href="#">King</a></li>
+                        <li><a href="#">Bunk Single</a></li>
+                        <li><a href="#">Bunk King Single</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="#">MATTRESSES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Soft Mattress</a></li>
+                        <li><a href="#">Firm Mattress</a></li>
+                        <li><a href="#">Babe Mattress</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="wardrobes.html">WARDROBE & STORAGE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="wardrobes.html">Wardrobe</a></li>
+                        <li><a href="#">Chest</a></li>
+                    </ul>
+                </li>
+                <li><a class="catnav-link" href="sofas.html">SOFAS</a></li>
+                <li><a class="catnav-link" href="#">TV STANDS & UNITS</a></li>
+                <li><a class="catnav-link" href="#">TABLES & CHAIRS</a></li>
+                <li><a class="catnav-link" href="#">HOME APPLIANCES</a></li>
+                <li><a class="catnav-link" href="#">OTHERS</a></li>
+                <li class="dropdown"><a class="catnav-link" href="#">PACKAGES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Living Room</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <img src="images/grey-sofa-with-pillows.jpg" alt="furniture">
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Contact</li>
+        </ul>
+
+        <section class="container" id="contact-section">
+
+            <div class="flex-container">
+                
+                <div id="contact-description">
+                    <h2>Find Us At...</h2>
+                    <p>Shop 1, 41 Marion St</p>
+                    <p>Parramatta NSW 2150</p>
+                    <p>(On the westside of Harris Park station.)</p>
+                    <br>
+                    <h2>Opening Hours</h2>
+                    <p>Mon - Sun (10am - 6pm)</p>
+                    <br>
+                    <h2>Contact Details</h2>
+                    <p>Hot Deal Furniture Pty Ltd</p>
+                    <p>ACN: 146 143 071</p>
+                    <br>
+                    <p>Phone: (02) 96358200 / 0423669515</p>
+                    <p>Email: hotdealfurniture@gmail.com</p>
+                    <p>Website: www.hotdealfurniture.com.au/</p>
+                </div>
+
+                <div style="width: 100%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d379.9382458448763!2d151.00711058797123!3d-33.82251843645308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a32408e16221%3A0xb3988ca877e234cc!2sShop%201%2F41%20Marion%20St%2C%20Parramatta%20NSW%202150%2C%20Australia!5e0!3m2!1sen!2smy!4v1591379569252!5m2!1sen!2smy" 
+                    width="600" height="400" frameborder="0" allowfullscreen="" 
+                    aria-hidden="false" tabindex="0" id="google-map"></iframe>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <section id="footer-container">
+
+            <div>
+                <ul>
+                    <li><h2>Contact Us!</h2></li>
+                    <li><i class="fas fa-phone-alt fa-fw"></i> (02) 9635 8200 / 0423669515</li>
+                    <li><i class="fas fa-envelope fa-fw"></i> hotdealfurniture@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Shop 1, 41 Marion St</li>
+                    <!-- the following icons with 0 opacity allow lines of text to align perfectly -->
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Parramatta NSW 2150</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Mon - Sun (10am - 6pm)</li>
+                    <li>HELP <i class="far fa-question-circle fa-fw"></i></li>
+                    <li>PRIVACY POLICY</li>
+                    <li>TERMS & CONDITIONS</li>
+                </ul>
+            </div>
+            
+            <div id="keep-in-touch">
+                <ul>
+                    <li><h2>Keep in touch!</h2></li>
+                    <li style="margin: 0.5rem 0 1rem 0;">
+
+                        <!-- Email subscription container (with extra width for long email addresses) -->
+                        <span class="input-container" style="border: none;">
+                            <input type="email" placeholder="Email Address" style="width: 180px;">
+                            <button type="submit">SUBSCRIBE</button>
+                        </span>
+
+                    </li>
+                    
+                    <!-- Social media icons -->
+                    <li style="font-size: 1rem;">
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-fw fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-weibo fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-qq fa-stack-1x"></i>
+                        </span>
+                    </li>
+
+                    <!-- Payment method icons -->
+                    <li style="font-size: 2rem;">
+                        <i class="fab fa-cc-amex fa-fw"></i>
+                        <i class="fab fa-cc-mastercard fa-fw"></i>
+                        <i class="fab fa-cc-visa fa-fw"></i>
+                    </li>
+
+                    <!-- Copyright message -->
+                    <li><i class="far fa-copyright fa-fw"></i> Copyright 2020 HOT DEAL Furniture. Designed by Yu Tong Gan.</li>
+                </ul>
+            </div>    
+    
+        </section>
+    </footer>
+
+</body>
+</html>

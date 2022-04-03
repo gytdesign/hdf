@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | HOT DEAL Furniture</title>
+    
+    <!-- Links to local css and js files -->
+    <link href="style.css" rel="stylesheet">
+    <script src="myscript.js"></script>
+    
+    <!-- Link to Font Awesome kit icons -->
+    <script src="https://kit.fontawesome.com/d1cfde979f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <!-- Fixed Top Navigation -->
+        <nav id="topnav">
+            
+            <!-- Burger Menu -->
+            <div id="burger" onclick="toggleSidenav()">
+                <i class="fas fa-bars fa-fw"></i>
+            </div>
+
+            <!-- Logo -->
+            <a href="index.html"><img id="logo" src="images/logo.PNG" alt="logo"></a>
+            
+            <!-- Icons in Top Navigation -->
+            <div class="icons">    
+
+                <!-- Mini search bar in topnav -->
+                <span class="search-container wide-topnav-item">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fas fa-search fa-fw"></i></button>
+                </span>
+
+                <!-- Search icon that appears on smaller devices to toggle the full search bar on/off -->             
+                <button id="search-icon" onClick="showHide('full-search-bar')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- code for full-search-bar would appear here -->
+                
+                <!-- Help -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="far fa-question-circle fa-fw"></i> Help
+                </a>
+                
+                <!-- Contact -->
+                <a class="wide-topnav-item" href="contact.html">
+                    <i class="fas fa-phone-alt fa-fw"></i> Contact
+                </a>
+                
+                <!-- Account -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                
+                <!-- Wishlist -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-heart fa-fw"></i>
+                </a>
+
+                <!-- Cart (does not have "wide-topnav-item" class because the icon is shown regardless of topnav width) -->
+                <a id="cart" href="cart.html">
+                    <i class="fas fa-shopping-cart fa-fw"></i>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Side Navigation includes both topnav and catnav links -->
+        <ul id="sideNav">
+            <li><a href="#">BEDS</a></li>
+            <li><a href="#">MATTRESSES</a></li>
+            <li><a href="wardrobes.html">WARDROBE & STORAGE</a></li>
+            <li><a href="sofas.html">SOFAS</a></li>
+            <li><a href="#">TV STANDS & UNITS</a></li>
+            <li><a href="#">TABLES & CHAIRS</a></li>
+            <li><a href="#">HOME APPLIANCES</a></li>
+            <li><a href="#">OTHERS</a></li>
+            <li><a href="#">PACKAGES</a></li>
+            <li><div id="horizontal-line"></div></li>
+            <li>
+                <a href="#">MY ACCOUNT <i class="fas fa-user fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">WISHLIST <i class="fas fa-heart fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">HELP <i class="far fa-question-circle fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="contact.html">CONTACT <i class="fas fa-phone-alt fa-fw"></i></a>
+            </li>
+        </ul>
+
+        <!-- Category Navigation bar -->
+        <nav>
+            <ul id="catnav">
+                <li class="dropdown"><a class="catnav-link" href="#">BEDS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Single</a></li>
+                        <li><a href="#">King Single</a></li>
+                        <li><a href="#">Double</a></li>
+                        <li><a href="#">Queen</a></li>
+                        <li><a href="#">King</a></li>
+                        <li><a href="#">Bunk Single</a></li>
+                        <li><a href="#">Bunk King Single</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="#">MATTRESSES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Soft Mattress</a></li>
+                        <li><a href="#">Firm Mattress</a></li>
+                        <li><a href="#">Babe Mattress</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="wardrobes.html">WARDROBE & STORAGE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="wardrobes.html">Wardrobe</a></li>
+                        <li><a href="#">Chest</a></li>
+                    </ul>
+                </li>
+                <li><a class="catnav-link" href="sofas.html">SOFAS</a></li>
+                <li><a class="catnav-link" href="#">TV STANDS & UNITS</a></li>
+                <li><a class="catnav-link" href="#">TABLES & CHAIRS</a></li>
+                <li><a class="catnav-link" href="#">HOME APPLIANCES</a></li>
+                <li><a class="catnav-link" href="#">OTHERS</a></li>
+                <li class="dropdown"><a class="catnav-link" href="#">PACKAGES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Living Room</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <!-- only the homepage hero image has a max-height of 650px -->
+        <img src="images/homepage-image.jpg" alt="furniture" style="max-height: 650px;">
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Gallery of product categories -->
+        <section class="container shaded-background">
+            
+            <h1>SHOP BY CATEGORY</h1>
+            <div class="flex-grid">
+                <div class="card">
+                    <a href="#"><img src="images/bed.jpg" alt="beds">BEDS</a>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="images/bed-mattress.jpg" alt="mattresses">MATTRESSES</a>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="images/drawers-desk.jpg" alt="wardrobe & storage">WARDROBE & STORAGE</a>
+                </div>
+                <div class="card">
+                    <a href="sofas.html"><img src="images/green-velvet-sofa.jpg" alt="sofas">SOFAS</a>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="images/tv-unit.jpg" alt="tv stands & units">TV STANDS & UNITS</a>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="images/white-cushion-chair.jpg" alt="tables & chairs">TABLES & CHAIRS</a>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="images/kitchen.jpg" alt="home appliances">HOME APPLIANCES</a>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="images/living-room.jpg" alt="packages">PACKAGES</a>
+                </div>
+            </div>                
+            
+        </section>
+
+        <!-- About Us section -->
+        
+        <section class="container" id="about-section">
+           
+            <div class="flex-container">
+
+                <div id="about-description">
+                    <h1>ABOUT US</h1>
+                    <p>Hot Deal Furniture is an Australian Owned business set up with one solitary mission. 
+                    We pride ourselves on delivering quality furniture and efficient service to you at 
+                    a fair price. We also ensure that our products are a contemporary fit to your home 
+                    and the Australian lifestyle.</p>
+                </div>
+                <div>
+                    <img class="image" src="images/about-image.jpg" alt="furniture">
+                </div>
+
+            </div>
+
+        </section>
+        
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <section id="footer-container">
+
+            <div>
+                <ul>
+                    <li><h2>Contact Us!</h2></li>
+                    <li><i class="fas fa-phone-alt fa-fw"></i> (02) 9635 8200 / 0423669515</li>
+                    <li><i class="fas fa-envelope fa-fw"></i> hotdealfurniture@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Shop 1, 41 Marion St</li>
+                    <!-- the following icons with 0 opacity allow lines of text to align perfectly -->
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Parramatta NSW 2150</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Mon - Sun (10am - 6pm)</li>
+                    <li><a href="#">HELP <i class="far fa-question-circle fa-fw"></i></a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                    <li><a href="#">TERMS & CONDITIONS</a></li>
+                </ul>
+            </div>
+            
+            <div id="keep-in-touch">
+                <ul>
+                    <li><h2>Keep in touch!</h2></li>
+                    <li style="margin: 0.5rem 0 1rem 0;">
+
+                        <!-- Email subscription container (with extra width for long email addresses) -->
+                        <span class="input-container" style="border: none;">
+                            <input type="email" placeholder="Email Address" style="width: 180px;">
+                            <button type="submit">SUBSCRIBE</button>
+                        </span>
+
+                    </li>
+                    
+                    <!-- Social media icons -->
+                    <li style="font-size: 1rem;">
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-fw fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-weibo fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-qq fa-stack-1x"></i>
+                        </span>
+                    </li>
+
+                    <!-- Payment method icons -->
+                    <li style="font-size: 2rem;">
+                        <i class="fab fa-cc-amex fa-fw"></i>
+                        <i class="fab fa-cc-mastercard fa-fw"></i>
+                        <i class="fab fa-cc-visa fa-fw"></i>
+                    </li>
+
+                    <!-- Copyright message -->
+                    <li><i class="far fa-copyright fa-fw"></i> Copyright 2020 HOT DEAL Furniture. Designed by Yu Tong Gan.</li>
+                </ul>
+            </div>    
+    
+        </section>
+    </footer>
+
+</body>
+</html>

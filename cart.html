@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | HOT DEAL Furniture</title>
+    
+    <!-- Links to local css and js files -->
+    <link href="style.css" rel="stylesheet">
+    <script src="myscript.js"></script>
+    
+    <!-- Link to Font Awesome kit icons -->
+    <script src="https://kit.fontawesome.com/d1cfde979f.js" crossorigin="anonymous"></script>
+    
+    <!-- Links to external Flickity css and js files (for carousels) -->
+    <link href="https://npmcdn.com/flickity@2/dist/flickity.css" rel="stylesheet">
+    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <!-- Fixed Top Navigation -->
+        <nav id="topnav">
+            
+            <!-- Burger Menu -->
+            <div id="burger" onclick="toggleSidenav()">
+                <i class="fas fa-bars fa-fw"></i>
+            </div>
+
+            <!-- Logo -->
+            <a href="index.html"><img id="logo" src="images/logo.PNG" alt="logo"></a>
+            
+            <!-- Icons in Top Navigation -->
+            <div class="icons">    
+
+                <!-- Mini search bar in topnav -->
+                <span class="search-container wide-topnav-item">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fas fa-search fa-fw"></i></button>
+                </span>
+
+                <!-- Search icon that appears on smaller devices to toggle the full search bar on/off -->             
+                <button id="search-icon" onClick="showHide('full-search-bar')">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- code for full-search-bar would appear here -->
+                
+                <!-- Help -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="far fa-question-circle fa-fw"></i> Help
+                </a>
+                
+                <!-- Contact -->
+                <a class="wide-topnav-item" href="contact.html">
+                    <i class="fas fa-phone-alt fa-fw"></i> Contact
+                </a>
+                
+                <!-- Account -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                
+                <!-- Wishlist -->
+                <a class="wide-topnav-item" href="#">
+                    <i class="fas fa-heart fa-fw"></i>
+                </a>
+
+                <!-- Cart (does not have "wide-topnav-item" class because the icon is shown regardless of topnav width) -->
+                <a id="cart" href="cart.html">
+                    <i class="fas fa-shopping-cart fa-fw"></i>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Side Navigation includes both topnav and catnav links -->
+        <ul id="sideNav">
+            <li><a href="#">BEDS</a></li>
+            <li><a href="#">MATTRESSES</a></li>
+            <li><a href="wardrobes.html">WARDROBE & STORAGE</a></li>
+            <li><a href="sofas.html">SOFAS</a></li>
+            <li><a href="#">TV STANDS & UNITS</a></li>
+            <li><a href="#">TABLES & CHAIRS</a></li>
+            <li><a href="#">HOME APPLIANCES</a></li>
+            <li><a href="#">OTHERS</a></li>
+            <li><a href="#">PACKAGES</a></li>
+            <li><div id="horizontal-line"></div></li>
+            <li>
+                <a href="#">MY ACCOUNT <i class="fas fa-user fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">WISHLIST <i class="fas fa-heart fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="#">HELP <i class="far fa-question-circle fa-fw"></i></a>
+            </li>
+            <li>
+                <a href="contact.html">CONTACT <i class="fas fa-phone-alt fa-fw"></i></a>
+            </li>
+        </ul>
+
+        <!-- Category Navigation bar -->
+        <nav>
+            <ul id="catnav">
+                <li class="dropdown"><a class="catnav-link" href="#">BEDS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Single</a></li>
+                        <li><a href="#">King Single</a></li>
+                        <li><a href="#">Double</a></li>
+                        <li><a href="#">Queen</a></li>
+                        <li><a href="#">King</a></li>
+                        <li><a href="#">Bunk Single</a></li>
+                        <li><a href="#">Bunk King Single</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="#">MATTRESSES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Soft Mattress</a></li>
+                        <li><a href="#">Firm Mattress</a></li>
+                        <li><a href="#">Babe Mattress</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="catnav-link" href="wardrobes.html">WARDROBE & STORAGE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="wardrobes.html">Wardrobe</a></li>
+                        <li><a href="#">Chest</a></li>
+                    </ul>
+                </li>
+                <li><a class="catnav-link" href="sofas.html">SOFAS</a></li>
+                <li><a class="catnav-link" href="#">TV STANDS & UNITS</a></li>
+                <li><a class="catnav-link" href="#">TABLES & CHAIRS</a></li>
+                <li><a class="catnav-link" href="#">HOME APPLIANCES</a></li>
+                <li><a class="catnav-link" href="#">OTHERS</a></li>
+                <li class="dropdown"><a class="catnav-link" href="#">PACKAGES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Living Room</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <img src="images/living-room-2.jpg" alt="furniture">
+    </div>
+
+    
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Cart</li>
+        </ul>
+
+        <!-- Main Cart Info -->
+        <section class="container">
+
+            <div class="flex-container" style="width: 100%;">
+
+                <!-- Product list --> 
+                <div style="margin-bottom: 2rem;">
+                    <h2>YOUR ITEMS</h2>
+
+                    <div class="cart-item flex-container">
+                        <div class="item-description">
+                            <div> 
+                                <img src="images/sofas/abbotbury-2-seater-sofa.png" alt="abbotbury-2-seater-sofa">
+                            </div>
+                            <div>
+                                <h3>ABBOTBURY 2-SEATER</h3>
+                                <p>Model: FS180PA</p>
+                                <p>Colour: Light Grey</p>
+                                <a href="abbotbury-2-seater.html" style="color: #BEB9B5; font-weight: bold;"><u>EDIT</u></a>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <div>
+                                <h3><span style="color: #BEB9B5; opacity: 0;"><sup><s>$499.99</s></span> $499.99</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-minus"></i>
+                                <span class="input-container">
+                                    <input type="text" value="1" style="width: 25px;">
+                                </span>
+                                <i class="fas fa-plus fa-fw"></i>
+                            </div>
+                            <div>
+                                <h3 class="price">$499.99</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-trash-alt fa-fw"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-item flex-container">
+                        <div class="item-description">
+                            <div> 
+                                <img src="images/wardrobes/concord-bedside.png" alt="concord bedside">
+                            </div>
+                            <div>
+                                <h3>CONCORD BEDSIDE</h3>
+                                <p>Model: CC200PA</p>
+                                <p>Colour: Dark Brown</p>
+                                <a href="concord-bedside.html" style="color: #BEB9B5; font-weight: bold;"><u>EDIT</u></a>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <div>
+                                <h3><span style="color: #BEB9B5;"><sup><s>$229.99</s></sup></span> $199.99</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-minus"></i>
+                                <span class="input-container">
+                                    <input type="text" value="2" style="width: 25px;">
+                                </span>
+                                <i class="fas fa-plus fa-fw"></i>
+                            </div>
+                            <div>
+                                <h3 class="price">$399.98</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-trash-alt fa-fw"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Order summary -->
+                <div>
+                    <h2>ORDER SUMMARY</h2>
+            
+                    <div class="order-summary">
+
+                        <div class="content">
+                            <h3>SUBTOTAL</h3>
+                            <h3 class="price">$899.97</h3>
+                        </div>
+                        <div style="padding: 0 1.5rem;">
+                            <h3>ESTIMATED DELIVERY</h3>
+                            <span class="input-container">
+                                <input type="text" placeholder="e.g. 3000" style="width: 150px; margin-top: 1rem;">
+                                <button type="submit" onClick="toggleTransparency('estDeliveryFee')">CHECK</button>
+                            </span>
+                        </div>
+                        <div class="content" id="estDeliveryFee">
+                            <h3 style="font-weight: normal;">ESTIMATED DELIVERY FEE</h3>
+                            <h3 class="price">$30</h3>
+                        </div>
+                        <div id="horizontal-line" style="margin: 0 1.5rem;"></div>
+                        <div class="content">
+                            <div>
+                                <h3>TOTAL</h3>
+                                <p style="color: #BEB9B5;">incl. GST</p>
+                            </div>
+                            <h3 class="price">$929.97</h3>
+                        </div>
+                        <div class="heading darker-background round-bottom" style="align-self: flex-end;">
+                            <a href="checkout.html"><i class="far fa-credit-card fa-fw"></i> PROCEED TO CHECKOUT</a>
+                        </div>
+
+                    </div>
+
+                    <form action="index.html" class="nav-button">
+                        <button type="submit"><i class="fas fa-chevron-left fa-fw"></i> BACK TO SHOPPING</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Recently Viewed -->
+        <section class="recently-viewed container shaded-background">
+            
+            <h2>RECENTLY VIEWED</h2>
+
+            <!-- Product Gallery -->
+            <div class="carousel js-flickity" data-flickity='{ "wrapAround": true }'> 
+                <div class="carousel-cell">
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/wardrobes/light-grey-closet.png" alt="sliding doors faschia closet"></div>
+                            Sliding Doors Faschia Closet<br>
+                            <span class="price">$449.99</span><span class="original-price"><s> $499.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/sky-blue-couch.png" alt="sky couch"></div>
+                            Sky Couch<br>
+                            <span class="price">$349.99</span><span class="original-price"><s> $379.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/princess-pink-sofa.png" alt="princess sofa"></div>
+                            Princess Sofa<br>
+                            <span class="price">$499.99</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/red-velvet-sofa.png" alt="velvet sofa"></div>
+                            Velvet Sofa<br>
+                            <span class="price">$259.99</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Product Suggestions -->
+        <section class="product-suggestions container" style="justify-items: normal; padding-bottom: 3rem;">
+            
+            <div class="heading">
+                <h2>YOU MAY ALSO LIKE...</h2>
+                <a href="#" style="font-weight: bold; color: #BEB9B5;"><u>VIEW MORE</u></a>
+            </div>
+            
+            <!-- Product Carousel -->
+            <div class="carousel js-flickity" data-flickity='{ "wrapAround": true }'>
+                <div class="carousel-cell">
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/red-contemporary-sofa.png" alt="contemporary sofa"></div>
+                            Contemporary Sofa<br>
+                            <span class="price">$339.99</span><span class="original-price"><s> $359.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/small-sectional-sofa.png" alt="sectional mini sofa"></div>
+                            Sectional Mini Sofa<br>
+                            <span class="price">$329.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="sofas.html">
+                            <div class="cropped"><img src="images/wardrobes/8-cube-bookcase.png" alt="cube bookcase"></div>
+                            Cube Bookcase<br>
+                            <span class="price">299.99</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/red-velvet-sofa.png" alt="velvet sofa"></div>
+                            Velvet Sofa<br>
+                            <span class="price">$259.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/wardrobes/3-door-wardrobe.png" alt="brenn wardrobe"></div>
+                            Brenn Wardrobe<br>
+                            <span class="price">$899.99</span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/wardrobes/white-antique-wardrobe.png" alt="antique wardrobe"></div>
+                            Antique Wardrobe<br>
+                            <span class="price">$1299.99</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/sofas/fabric-sofa.png" alt="light fabric sofa"></div>
+                            Light Fabric Sofa<br>
+                            <span class="price">$259.99</span><span class="original-price"><s> $299.99</s></span>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="cropped"><img src="images/wardrobes/2door-2drawer.png" alt="gilbert wardrobe"></div>
+                            Gilbert Wardrobe<br>
+                            <span class="price">$499.99</span><span class="original-price"><s> $529.99</s></span>
+                        </a>
+                    </div>
+                </div>
+            </div>                
+            
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <section id="footer-container">
+
+            <div>
+                <ul>
+                    <li><h2>Contact Us!</h2></li>
+                    <li><i class="fas fa-phone-alt fa-fw"></i> (02) 9635 8200 / 0423669515</li>
+                    <li><i class="fas fa-envelope fa-fw"></i> hotdealfurniture@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Shop 1, 41 Marion St</li>
+                    <!-- the following icons with 0 opacity allow lines of text to align perfectly -->
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Parramatta NSW 2150</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw" style="opacity: 0%;"></i> Mon - Sun (10am - 6pm)</li>
+                    <li>HELP <i class="far fa-question-circle fa-fw"></i></li>
+                    <li>PRIVACY POLICY</li>
+                    <li>TERMS & CONDITIONS</li>
+                </ul>
+            </div>
+            
+            <div id="keep-in-touch">
+                <ul>
+                    <li><h2>Keep in touch!</h2></li>
+                    <li style="margin: 0.5rem 0 1rem 0;">
+
+                        <!-- Email subscription container (with extra width for long email addresses) -->
+                        <span class="input-container" style="border: none;">
+                            <input type="email" placeholder="Email Address" style="width: 180px;">
+                            <button type="submit">SUBSCRIBE</button>
+                        </span>
+
+                    </li>
+                    
+                    <!-- Social media icons -->
+                    <li style="font-size: 1rem;">
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-fw fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-weibo fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-qq fa-stack-1x"></i>
+                        </span>
+                    </li>
+
+                    <!-- Payment method icons -->
+                    <li style="font-size: 2rem;">
+                        <i class="fab fa-cc-amex fa-fw"></i>
+                        <i class="fab fa-cc-mastercard fa-fw"></i>
+                        <i class="fab fa-cc-visa fa-fw"></i>
+                    </li>
+
+                    <!-- Copyright message -->
+                    <li><i class="far fa-copyright fa-fw"></i> Copyright 2020 HOT DEAL Furniture. Designed by Yu Tong Gan.</li>
+                </ul>
+            </div>    
+    
+        </section>
+    </footer>
+
+</body>
+</html>
